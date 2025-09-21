@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vidhan Verma — Interactive Portfolio</title>
+  <meta name="description" content="Vidhan Verma — Full-Stack Developer · ML & Security Explorer" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="nav" role="banner">
+        <div class="brand">
+          <!-- Updated logo to show photo -->
+          <!-- <div class="logo">
+            <img src="photo.jpg" alt="Vidhan Verma" class="profile-pic">
+          </div> -->
+          <div>
+            <div style="font-weight:800">Vidhan Verma</div>
+            <div style="font-size:12px;color:var(--muted)">Full-Stack Developer · Compiler Enthusiast</div>
+          </div>
+        </div>
+        <nav aria-label="Main navigation">
+          <a href="#home" data-link class="active">Home</a>
+          <a href="#about" data-link>About</a>
+          <a href="#skills" data-link>Skills</a>
+          <a href="#projects" data-link>Projects</a>
+          <a href="#contact" data-link>Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- HOME -->
+      <section id="home" class="hero">
+        <div>
+          <h1 class="reveal">Hi — I'm Vidhan Verma</h1>
+          <div class="tag reveal">B.Tech CSE (2022-2026)· Full-Stack Developer · Security Enthusiast</div>
+          <p class="lead reveal">I build production-ready web apps, compilers and security research prototypes. I enjoy building systems end-to-end with clean code and well-documented design.</p>
+          <div class="cta reveal">
+            <a class="btn primary" href="resume.pdf" target="_blank" download>Download Resume</a>
+            <a class="btn ghost" href="#projects">See Projects</a>
+          </div>
+        </div>
+
+        <aside class="card">
+          <div style="display:flex;gap:14px;align-items:center;margin-bottom:10px">
+            <div class="logo" style="width:400px; height:200px; overflow:hidden; border-radius:50%;">
+  <img src="photo.jpg" alt="Vidhan Verma" class="profile-pic" style="width:100%; height:100%; object-fit:cover;">
+</div>
+
+            <!-- <div class="logo" style="width:64px;height:64px;">
+              <img src="photo.jpg" alt="Vidhan Verma" class="profile-pic">
+            </div> -->
+            <div>
+              <div style="font-weight:700">Vidhan Verma</div>
+              <div class="line" style="color:var(--muted);font-size:13px">B.Tech CSE — Graphic Era Hill University</div>
+            </div>
+          </div>
+          <div class="meta">
+            <div class="line">Email: <strong>vidhanverma2311@gmail.com</strong></div>
+            <div class="line">Phone: <strong>+91 8979542285</strong></div>
+            <div class="line">GitHub: <a href="https://github.com/vid123ver" target="_blank">@vid123ver</a></div>
+            <div class="line">LinkedIn: <a href="https://www.linkedin.com/in/vidhan-verma-41a773322/" target="_blank">Profile</a></div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about">
+        <h2 class="reveal">About</h2>
+        <p class="lead reveal">A motivated and skilled Computer Science student seeking opportunities to leverage my expertise in full-stack development, machine learning, and software engineering to contribute to innovative technological solutions.</p>
+        <div class="grid-2">
+          <div class="card reveal">
+            <h3 style="margin-top:0">Education</h3>
+            <ul style="color:var(--muted);font-size:14px">
+              <li><strong>B.Tech CSE</strong> — Graphic Era Hill University (GPA: 7.7/10)</li>
+              <li><strong>12th (CBSE)</strong> — Anand Swaroop Arya Saraswati Vidya Mandir (86.50%)</li>
+              <li><strong>10th (CBSE)</strong> — Anand Swaroop Arya Saraswati Vidya Mandir (89.80%)</li>
+            </ul>
+          </div>
+
+          <div class="card reveal">
+            <h3 style="margin-top:0">Internships</h3>
+            <p style="color:var(--muted);font-size:14px"><strong>SDE Intern — TBI-GEU (Nov 2024 - Feb 2025)</strong><br>Developed Expense Manager: production-ready full-stack app (React, Tailwind, Node.js, MongoDB). Implemented authentication, exports and analytics.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills">
+        <h2 class="reveal">Skills</h2>
+        <p class="lead reveal">Core technical skills and tools I use regularly.</p>
+        <div class="card reveal">
+          <div style="margin-bottom:8px;font-weight:700">Languages</div>
+          <div>
+            <span class="skill-badge">C++</span>
+            <span class="skill-badge">C</span>
+            <span class="skill-badge">Python</span>
+            <span class="skill-badge">JavaScript</span>
+          </div>
+          <div style="margin-top:12px;font-weight:700">Frameworks / Tools</div>
+          <div>
+            <span class="skill-badge">React.js</span>
+            <span class="skill-badge">Express.js</span>
+            <span class="skill-badge">Node.js</span>
+            <span class="skill-badge">MongoDB</span>
+            <span class="skill-badge">Socket.IO</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects">
+        <h2 class="reveal">Projects</h2>
+        <p class="lead reveal">Selected projects — click "Details" to open a focused modal with more information.</p>
+        <div class="grid-2" id="projectList"></div>
+      </section>
+
+      <!-- CONTACT -->
+
+      <!-- <section id="contact">
+  <h2 class="reveal">Contact</h2>
+  <p class="lead reveal">
+    Prefer email? Reach out at <strong>vidhanverma2311@gmail.com</strong>
+  </p>
+  <div class="card reveal" style="max-width:600px; margin:auto; padding:20px; background:transparent; box-shadow:none; border:none;">
+    <form id="contactForm" style="display:flex; flex-direction:column; gap:12px;">
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <input name="name" placeholder="Your name" required style="flex:1; min-width:200px; padding:10px;">
+        <input name="email" placeholder="Your email" required style="flex:1; min-width:200px; padding:10px;">
+      </div>
+      <textarea name="message" placeholder="Message" rows="6" required style="padding:10px; resize:none;"></textarea>
+      <div style="text-align:right;">
+        <button type="submit" class="btn primary">Send Message</button>
+      </div>
+    </form>
+  </div>
+</section> -->
+<!-- <section id="contact">
+  <h2 class="reveal">Contact</h2>
+  <p class="lead reveal">
+    Prefer email? Reach out at <strong>vidhanverma2311@gmail.com</strong>
+  </p>
+
+  <div class="card reveal" style="max-width:600px; margin:auto; padding:20px; background:transparent; box-shadow:none; border:none;">
+   
+    <form id="contactForm" action="https://formspree.io/f/your_form_id" method="POST" style="display:flex; flex-direction:column; gap:12px;">
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <input type="text" name="name" placeholder="Your name" required style="flex:1; min-width:200px; padding:10px;background:#333348">
+        <input type="email" name="email" placeholder="Your email" required style="flex:1; min-width:200px; padding:10px;background:#333348">
+      </div>
+      <textarea name="message" placeholder="Message" rows="6" required style="padding:10px; resize:none;background:#333348"></textarea>
+      <div style="text-align:right;">
+        <button type="submit" class="btn primary">Send Message</button>
+      </div>
+    </form>
+  </div>
+</section> -->
+
+<section id="contact">
+  <h2 class="reveal">Contact</h2>
+  <p class="lead reveal">
+    Prefer email? Reach out at <strong>vidhanverma2311@gmail.com</strong>
+  </p>
+
+  <div class="card reveal" style="max-width:600px; margin:auto; padding:20px; background:transparent; box-shadow:none; border:none;">
+    <!-- This will send messages directly to your Gmail -->
+    <form id="contactForm" action="https://formspree.io/f/mjkabvqa" method="POST" style="display:flex; flex-direction:column; gap:12px;">
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <input type="text" name="name" placeholder="Your name" required style="flex:1; min-width:200px; padding:10px; background:#333348; color:#fff; border:none; border-radius:6px;">
+        <input type="email" name="email" placeholder="Your email" required style="flex:1; min-width:200px; padding:10px; background:#333348; color:#fff; border:none; border-radius:6px;">
+      </div>
+      <textarea name="message" placeholder="Message" rows="6" required style="padding:10px; resize:none; background:#333348; color:#fff; border:none; border-radius:6px;"></textarea>
+      <div style="text-align:right;">
+        <button type="submit" class="btn primary">Send Message</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+    </main>
+
+    <footer>
+      © <span id="year"></span> Vidhan Verma — Built with HTML/CSS/JS
+    </footer>
+  </div>
+
+  <!-- Modal (project details) -->
+  <div id="modal">
+    <div class="modal-box">
+      <button id="closeModal">Close</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
