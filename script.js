@@ -3,13 +3,13 @@ const PROFILE = {
   email: "vidhanverma2311@gmail.com",
   phone: "+91 8979542285",
   github: "https://github.com/vid123ver",
-  linkedin: "https://www.linkedin.com/in/vidhan-verma-41a773322/",
+  linkedin: "https://www.linkedin.com/in/vidhan-verma-vid123ver/",
 };
 
 const PROJECTS = [
   {
     id: "expense-manager",
-    title: "Expense Manager (Production-ready)",
+    title: "Expense Manager (Production-ready • Render)",
     tech: "React, Tailwind, Node.js, MongoDB, JWT",
     summary:
       "A full-stack application for personal and group expense tracking with exports, graphs and reminders.",
@@ -22,7 +22,7 @@ based access control.<br>
 graphs, and reminders.<br>
 ◦ Followed agile development practices, collaborated with mentors, and applied modular, scalable de-
 sign principles.`,
-    link: "https://github.com/vid123ver/expense-manager",
+    link: "https://github.com/Vidhiverma602/MY-EXPENSES",
   },
   {
     id: "chat-app",
@@ -71,6 +71,20 @@ brary.<br>
 strations.`,
     link: "https://github.com/vid123ver/-RANSOMWARE_project",
   },
+  {
+    id: "parkinsons-detection",
+    title: "Parkinson’s Disease Detection System",
+    tech: "Python, scikit-learn, OpenCV, SVM, Random Forest, KNN",
+    summary:
+      "ML system for early detection of Parkinson’s Disease using hand-drawn spirals and waves.",
+    details: `◦ Developed a machine learning system for early detection of Parkinson’s Disease using hand-drawn spirals and waves.<br>
+◦ Performed essential image preprocessing including noise removal, thresholding, and contour isolation using OpenCV.<br>
+◦ Extracted discriminative visual features through Histogram of Oriented Gradients (HOG) to analyze distortions.<br>
+◦ Trained multiple ML models — Random Forest, SVM, and KNN — achieving 90% accuracy on extra datasets.<br>
+◦ Built explainable visualizations highlighting feature importance and decision boundaries to assist clinical interpretation.<br>
+◦ End-to-end workflow: Preprocess → extract HOG features → classify ML models → display predictions with insights.`,
+    link: "https://github.com/Vidhiverma602/Early-Parkinson-detection-",
+  },
 ];
 
 // footer year
@@ -114,13 +128,54 @@ document
   );
 
 // Contact form
-document.getElementById("contactForm").addEventListener("submit", (e) => {
-  e.preventDefault();
-  alert(
-    "Thanks! This is a demo contact form. Wire it to an email service or backend to receive messages."
-  );
-  e.target.reset();
-});
+// Contact form - submit via AJAX to the form `action` (e.g. Formspree)
+const contactForm = document.getElementById("contactForm");
+if (contactForm) {
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const action = contactForm.getAttribute("action");
+    if (!action) {
+      alert(
+        "No form endpoint configured. Please add a form action to the HTML."
+      );
+      return;
+    }
+
+    const submitBtn =
+      contactForm.querySelector('button[type="submit"]') ||
+      contactForm.querySelector("button");
+    if (submitBtn) submitBtn.disabled = true;
+
+    const formData = new FormData(contactForm);
+    try {
+      const res = await fetch(action, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: formData,
+      });
+
+      if (res.ok) {
+        // success
+        alert("Thanks! Your message has been sent.");
+        contactForm.reset();
+      } else {
+        // try to parse error message
+        let detail = "Please try again later.";
+        try {
+          const data = await res.json();
+          if (data && data.error) detail = data.error;
+        } catch (_) {}
+        alert("Submission failed. " + detail);
+      }
+    } catch (err) {
+      alert("Submission failed. Please check your connection and try again.");
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
+    }
+  });
+}
 
 // Navigation highlight + scroll
 const links = Array.from(document.querySelectorAll("[data-link]"));
